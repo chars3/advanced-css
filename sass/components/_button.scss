@@ -24,6 +24,12 @@
     border-radius: 1rem;
 }
 
+.btn--green {
+    background-color: $color-primary;
+    color: $color-white;
+    border-radius: 1rem;
+}
+
 .btn::after {
     content: "";
     display: inline-block;
@@ -39,6 +45,10 @@
 
 .btn--white::after {
     background-color: $color-white;
+}
+
+.btn--green::after {
+    background-color: $color-primary;
 }
 
 .btn:hover::after {
