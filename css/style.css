@@ -1,124 +1,31 @@
-/*
-Colors:
-
-light green: #12e066;
-medium green: #55c57a;
-dark green : #28b485;
-*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #777;
-}
-
-.header {
-    height: 95vh;
-    background: linear-gradient(to right, #12e066, #28b485);
-    position: relative;
-    /* animation: rotate 2s linear infinite; */
-}
-
-.logo-box {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-}
-
-.logo {
-    height: 25px;
-}
-
-.text-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-
-    backface-visibility: hidden;
-    margin-bottom: 60px;
-}
-
-.heading-primary-main {
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 15px;
-
-    animation-name: moveInLeft;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    /* animation: rotate 2s linear infinite; */
-}
-
-.heading-primary-sub {
-    display: block;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 8px;
-
-    animation-name: moveInRight;
-    animation-duration: 2s;
-    /* animation-timing-function: ease-out; */
-}
-
+@charset "UTF-8";
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80% {
-        transform: translateX(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    80% {
-        transform: translateX(-10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 /* @keyframes rotate {
     from {
@@ -128,56 +35,301 @@ body {
         transform: rotate(360deg);
     }
 } */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /*  Isso é o mesmo que 10px
+        como a unidade de medida está em rem, quero definir que 1 rem é 10 pixels.
+        O cálculo é feito para que a proporção seja a mesma por mais que o usuário altere
+        o tamanho da fonte do navegador.
+        Então 10/16 = 0,625 * 100 = 62,5%
+    */
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: #777; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    /* animation: rotate 2s linear infinite; */ }
+  .heading-primary .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: .8rem;
+    animation-name: moveInRight;
+    animation-duration: 2s;
+    /* animation-timing-function: ease-out; */ }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #55c57a, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem; }
+
+.heading-secondary-2 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  color: #fff;
+  letter-spacing: .2rem; }
+
+.heading-tertiari {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.header {
+  height: 95vh;
+  background: linear-gradient(to right, #12e066, #28b485);
+  position: relative;
+  /* animation: rotate 2s linear infinite; */ }
+  .header .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header .header__logo {
+    height: 2.5rem; }
+  .header .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  width: 70%;
+  margin: 0 auto; }
+  .row .col-2 {
+    width: 60rem; }
+
+.row-2 {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px; }
 
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 10px 30px;
-    display: inline-block;
-    transition: all .2s;
-    position: relative;
-}
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  display: inline-block;
+  transition: all .2s;
+  position: relative; }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.2);
-}
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
-}
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-.btn-white {
-    background-color: #fff;
-    color: #777;
-    border-radius: 10px;
-}
+.btn--white {
+  background-color: #fff;
+  color: #777;
+  border-radius: 1rem; }
 
 .btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
 
-.btn-white::after {
-    background-color: #fff;
-}
+.btn--white::after {
+  background-color: #fff; }
 
 .btn:hover::after {
-    transform: scaleX(1.2) scaleY(1.6);
-    opacity: 0;
-}
+  transform: scaleX(1.2) scaleY(1.6);
+  opacity: 0; }
 
-.btn-animated {
-    animation: moveInBottom .5s ease-out;
-    animation-fill-mode: backwards;
-}
+.btn--animated {
+  animation: moveInBottom .5s ease-out;
+  animation-fill-mode: backwards; }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #12e066;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #12e066;
+  padding: 5px 10px;
+  transition: all .2s; }
+
+.btn-text:hover {
+  background-color: #12e066;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 1rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: solid 0.5rem #12e066;
+      transform: scale(1.05);
+      box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.9); }
+
+.feature-box {
+  background-color: #f7f7f7;
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s;
+  min-height: 25rem;
+  width: 30rem; }
+  .feature-box__icon {
+    width: 30%;
+    margin-bottom: 0.5rem; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 40rem;
+  margin: 0 20px; }
+  .card__side {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    width: 30rem;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 40rem;
+    margin: 0 auto;
+    transition: all .8s ease;
+    box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      background: linear-gradient(to right, #12e066, #28b485);
+      transform: rotateY(180deg);
+      position: absolute;
+      top: 0;
+      left: 0; }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__img {
+    background-size: cover;
+    height: 100%;
+    width: 100%; }
+    .card__img--1 {
+      background-image: url(../../img/ebooks/clique.svg); }
+    .card__img--2 {
+      background-image: url(../../img/ebooks/financeiro.png); }
+    .card__img--3 {
+      background-image: url(../../img/ebooks/mineiro-img.png); }
+  .card__cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .card__content {
+    text-align: center;
+    margin-bottom: 4rem; }
+  .card__header {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__title {
+    font-size: 2rem;
+    min-height: 4rem;
+    padding: 0 2rem; }
+
+.section-about {
+  padding: 10rem 0;
+  background-color: #f7f7f7; }
+
+.section-features {
+  padding: 10rem 0;
+  background: linear-gradient(to right, #12e066, #28b485); }
+
+.section-tours {
+  padding: 10rem 0;
+  background-color: #f7f7f7; }

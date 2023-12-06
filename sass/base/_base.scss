@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /*  Isso é o mesmo que 10px
+        como a unidade de medida está em rem, quero definir que 1 rem é 10 pixels.
+        O cálculo é feito para que a proporção seja a mesma por mais que o usuário altere
+        o tamanho da fonte do navegador.
+        Então 10/16 = 0,625 * 100 = 62,5%
+    */
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}

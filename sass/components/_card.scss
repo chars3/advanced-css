@@ -1,0 +1,98 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 40rem;
+    margin: 0 20px;
+
+    &__side {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+        width: 30rem;
+        backface-visibility: hidden;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 40rem;
+        margin: 0 auto;
+        transition: all .8s ease;
+        box-shadow: 0 1.5rem 1.5rem rgba($color-black, .15);
+
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            background: linear-gradient(to right, $color-primary, $color-primary-dark);
+            transform: rotateY(180deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    &__img {
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+
+        //Aplica um efeito visual de cor
+        // background-blend-mode: color;
+        // background-blend-mode: screen;
+
+        &--1 {
+            //Aplica um efeito visual de cor
+            // background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark), url(../../img/ebooks/clique.svg);
+
+            background-image: url(../../img/ebooks/clique.svg);
+        }
+
+        &--2 {
+            //Aplica um efeito visual de cor
+            // background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark), url(../../img/ebooks/financeiro.png);
+
+            background-image: url(../../img/ebooks/financeiro.png);
+        }
+
+        &--3 {
+            //Aplica um efeito visual de cor
+            // background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark), url(../../img/ebooks/mineiro-img.png);
+
+            background-image: url(../../img/ebooks/mineiro-img.png);
+        }
+    }
+
+    &__cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    &__header {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-size: 2rem;
+        min-height: 4rem;
+        padding: 0 2rem;
+    }
+}
+
