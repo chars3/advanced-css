@@ -1,0 +1,80 @@
+.form-utm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: $color-white;
+    padding: 2rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 1.5rem rgba($color-black, .15);
+
+    &__input-box {
+        position: relative;
+
+        .input,
+        .new-url {
+            padding: 1rem;
+            width: 100%;
+            border: 1px solid rgba($color-primary, .5);
+            border-radius: 5px;
+            outline: none;
+            font-size: 1.5rem;
+            color: $color-gray-dark;
+
+            &:valid ~ .span,
+            &:focus ~ .span {
+                color: rgba($color-white, .8);
+                transform: translateX(10px) translateY(-7px);
+                font-size: 1rem;
+                padding: 0 1rem;
+                background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+                border-radius: 3px;
+            }
+        }
+
+        .span {
+            position: absolute;
+            left: 0;
+            padding: 1rem;
+            pointer-events: none;
+            font-size: 1.4rem;
+            color: rgba($color-gray-dark, .5);
+            transition: .5s;
+            letter-spacing: 0.2rem;
+        }
+
+        .span-url {
+            position: absolute;
+            left: 1rem;
+            top: -1rem;
+            padding: 0 1rem;
+            pointer-events: none;
+            font-size: 1.4rem;
+            color: rgba($color-white, .8);
+            transition: .5s;
+            letter-spacing: 0.2rem;
+            background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+            border-radius: 3px;
+        }
+
+        .new-url {
+            padding-top: 4rem;
+        }
+
+    }
+
+    .textarea-container {
+        position: relative;
+    }
+
+    .copy-btn {
+        position: absolute;
+        right: 10px; 
+        top: 10px; 
+        display: none; 
+        cursor: pointer;
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        color: $color-white;
+        padding: 4px;
+        border: none;
+    }
+}

@@ -85,3 +85,17 @@
         transform: translateY(0);
     }
 }
+
+.btn--utm {
+    background-image: radial-gradient($color-primary, $color-primary-dark);
+    color: $color-white;
+    padding: 10px;
+    border: none;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,26 @@
 </head>
 
 <body>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="" class="navigation__link">Plataforma</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Na prática</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Blog</a></li>
+                <li class="navigation__item"><a href="" class="navigation__link">Materiais gratuitos</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <header class="header">
         <div class="header__logo-box">
             <img src="img/Logo (1).svg" alt="Logo" class="header__logo">
@@ -166,6 +186,155 @@
             </div>
         </section>
 
+        <section class="section-features">
+            <div class="u-center-text u-margin-bottom-small">
+                <h2 class="heading-secondary-2">
+                    Gerador de UTMS
+                </h2>
+            </div>
+
+            <div class="row-2">
+                <div class="form-utm">
+                    <!-- <label for="urlBase">URL Base:</label> -->
+                    <div class="form-utm__input-box">
+                        <input class="input" type="text" id="urlBase" required="required">
+                        <span class="span">URL Base:</span>
+                    </div>
+                    <div class="form-utm__input-box">
+                        <input class="input" type="text" id="source" required="required">
+                        <span class="span">Source (fiqon_source):</span>
+                    </div>
+                    <div class="form-utm__input-box">
+                        <input class="input" type="text" id="medium" required="required">
+                        <span class="span">Medium (fiqon_medium):</span>
+                    </div>
+                    <div class="form-utm__input-box">
+                        <input class="input" type="text" id="campaign" required="required">
+                        <span class="span">Campaign (fiqon_campaign):</span>
+                    </div>
+
+                    <button class="btn btn--utm" onclick="gerarUTM()">Gerar URL</button>
+
+                    <div class="form-utm__input-box textarea-container">
+                        <span class="span-url">Nova URL:</span>
+                        <textarea readonly class="new-url" id="urlGerada" rows="4" cols="50"></textarea>
+                        <button class="copy-btn" id="copyButton">Copiar URL</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="u-center-text u-margin-bottom-small">
+                <h2 class="heading-secondary-2">
+                    Validar telefone
+                </h2>
+            </div>
+            <div class="row-2">
+                <form class="form-utm" id="form-phone">
+                    <!-- <label for="urlBase">URL Base:</label> -->
+                    <div class="form-utm__input-box">
+                        <input class="input input-phone" type="text" id="phone">
+                        <span class="span">Telefone</span>
+                    </div>
+
+                    <button id="submit-phone" type="submit" class="btn btn--utm">validar telefone</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="section-tours">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary banner__img">
+                    Ebooks Interativos
+                </h2>
+            </div>
+
+            <div class="i-container">
+                <div class="i-card">
+                    <div class="i-img-box">
+                        <img src="img/interactive/img-1.jpg" alt="">
+                    </div>
+                    <div class="i-content-box">
+                        <div class="i-content">
+                            <h3>Post Um</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque neque quo ut quis.
+                                Enim vel consequatur aperiam quasi illum debitis a consequuntur molestias aspernatur
+                                assumenda, esse fugit corporis eius inventore!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card">
+                    <div class="i-img-box">
+                        <img src="img/interactive/img-2.jpg" alt="">
+                    </div>
+                    <div class="i-content-box">
+                        <div class="i-content">
+                            <h3>Post Dois</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque neque quo ut quis.
+                                Enim vel consequatur aperiam quasi illum debitis a consequuntur molestias aspernatur
+                                assumenda, esse fugit corporis eius inventore!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card">
+                    <div class="i-img-box">
+                        <img src="img/interactive/img-3.jpg" alt="">
+                    </div>
+                    <div class="i-content-box">
+                        <div class="i-content">
+                            <h3>Post Três</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque neque quo ut quis.
+                                Enim vel consequatur aperiam quasi illum debitis a consequuntur molestias aspernatur
+                                assumenda, esse fugit corporis eius inventore!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card">
+                    <div class="i-img-box">
+                        <img src="img/interactive/img-4.jpg" alt="">
+                    </div>
+                    <div class="i-content-box">
+                        <div class="i-content">
+                            <h3>Post Quatro</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque neque quo ut quis.
+                                Enim vel consequatur aperiam quasi illum debitis a consequuntur molestias aspernatur
+                                assumenda, esse fugit corporis eius inventore!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card">
+                    <div class="i-img-box">
+                        <img src="img/interactive/img-5.jpg" alt="">
+                    </div>
+                    <div class="i-content-box">
+                        <div class="i-content">
+                            <h3>Post Cinco</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque neque quo ut quis.
+                                Enim vel consequatur aperiam quasi illum debitis a consequuntur molestias aspernatur
+                                assumenda, esse fugit corporis eius inventore!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="i-card">
+                    <div class="i-img-box">
+                        <img src="img/interactive/img-6.jpg" alt="">
+                    </div>
+                    <div class="i-content-box">
+                        <div class="i-content">
+                            <h3>Post Seis</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque neque quo ut quis.
+                                Enim vel consequatur aperiam quasi illum debitis a consequuntur molestias aspernatur
+                                assumenda, esse fugit corporis eius inventore!</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+
         <div class="popup" id="popup-1">
             <div class="popup__content">
                 <div class="popup__left">
@@ -175,10 +344,18 @@
                     <a href="#section-tours" class="popup__close">&times</a>
                     <h2 class="heading-secondary u-margin-bottom-small">Do clique ao fechamento</h2>
                     <p class="popup__text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
                     </p>
                     <a href="" class="btn btn--green">Baixar e-book agora</a>
                 </div>
@@ -193,10 +370,18 @@
                     <a href="#section-tours" class="popup__close">&times</a>
                     <h2 class="heading-secondary u-margin-bottom-small">Financeiro integrado</h2>
                     <p class="popup__text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
                     </p>
                     <a href="" class="btn btn--green">Baixar e-book agora</a>
                 </div>
@@ -211,16 +396,26 @@
                     <a href="#section-tours" class="popup__close">&times</a>
                     <h2 class="heading-secondary u-margin-bottom-small">Guia da integração aplicada ao Growth</h2>
                     <p class="popup__text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel deserunt sequi itaque a dolores
+                        perferendis repellendus porro, iure aliquid quisquam voluptate, numquam facere exercitationem
+                        sed quibusdam perspiciatis et nihil! Earum.
                     </p>
                     <a href="" class="btn btn--green">Baixar e-book agora</a>
                 </div>
             </div>
         </div>
     </main>
+
+    <script src="calculo.js"></script>
 </body>
 
 </html>

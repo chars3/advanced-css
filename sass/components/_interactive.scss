@@ -1,0 +1,59 @@
+.i-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    gap: 20px;
+    margin: 0 auto;
+
+    .i-card {
+        
+        position: relative;
+        width: 320px;
+        height: 320px;
+
+        .i-img-box,
+        .i-content-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .i-content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color-white;
+            transform: scaleX(0);
+            transition: .5s;
+            transform: transform .5s ease-in-out;
+            transform-origin: right;
+        }
+
+        .i-img-box {
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+            }
+        }
+
+        
+    }
+
+    .i-card:hover .i-content-box::before {
+        transform: scaleX(1);
+        transform: transform .5s ease-in-out;
+        transform-origin: left;
+    }
+}

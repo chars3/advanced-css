@@ -32,10 +32,54 @@ let totalPorAno = totalPorMes * 12;
 let porcentagemEconomia = (totalPorAno/faturamento) * 100;
 
 
-console.log(horasPorMes)
-console.log(ganhoPorHora)
-console.log(horasGastasTotais)
-console.log(custoProcessoManual)
-console.log(totalPorMes)
-console.log(totalPorAno)
-console.log(`aumento de até ${porcentagemEconomia}% de faturamento`)
+// console.log(horasPorMes)
+// console.log(ganhoPorHora)
+// console.log(horasGastasTotais)
+// console.log(custoProcessoManual)
+// console.log(totalPorMes)
+// console.log(totalPorAno)
+// console.log(`aumento de até ${porcentagemEconomia}% de faturamento`)
+
+function gerarUTM() {
+    var copyButton = document.getElementById('copyButton');
+    copyButton.style.display = 'block';
+
+    var urlBase = document.getElementById('urlBase').value;
+    var source = document.getElementById('source').value;
+    var medium = document.getElementById('medium').value;
+    var campaign = document.getElementById('campaign').value;
+
+    var urlGerada = urlBase;
+    urlGerada += (urlBase.includes('?') ? '&' : '?') + 'fiqon_source=' + encodeURIComponent(source);
+    urlGerada += '&fiqon_medium=' + encodeURIComponent(medium);
+    urlGerada += '&fiqon_campaign=' + encodeURIComponent(campaign);
+
+    document.getElementById('urlGerada').value = urlGerada;
+}
+
+document.getElementById('copyButton').addEventListener('click', function() {
+    var textarea = document.getElementById('urlGerada');
+    navigator.clipboard.writeText(textarea.value)
+        .then(() => {
+            // Opção: Mostrar uma mensagem indicando que o texto foi copiado
+            console.log('copiado')
+        })
+        .catch(err => {
+            console.log('Algo deu errado', err);
+        });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    let form = document.getElementById('form-phone');
+    
+
+    form.addEventListener('submit', (e) => {
+        let phone = document.getElementById('phone').value;
+        e.preventDefault();
+        console.log('Formulário enviado');
+        console.log(phone.value);
+    });
+});
+
+
+
