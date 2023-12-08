@@ -29,7 +29,7 @@ let totalPorMes = quantidadeDeProcessos * custoProcessoManual;
 //total gasto por ano
 let totalPorAno = totalPorMes * 12;
 
-let porcentagemEconomia = (totalPorAno/faturamento) * 100;
+let porcentagemEconomia = (totalPorAno / faturamento) * 100;
 
 
 // console.log(horasPorMes)
@@ -57,7 +57,7 @@ function gerarUTM() {
     document.getElementById('urlGerada').value = urlGerada;
 }
 
-document.getElementById('copyButton').addEventListener('click', function() {
+document.getElementById('copyButton').addEventListener('click', function () {
     var textarea = document.getElementById('urlGerada');
     navigator.clipboard.writeText(textarea.value)
         .then(() => {
@@ -71,15 +71,22 @@ document.getElementById('copyButton').addEventListener('click', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     let form = document.getElementById('form-phone');
-    
 
     form.addEventListener('submit', (e) => {
-        let phone = document.getElementById('phone').value;
         e.preventDefault();
-        console.log('Formulário enviado');
-        console.log(phone.value);
+        let phone = document.getElementById('phone').value;
+
+        if (validarTelefone(phone)) {
+            console.log('Número de telefone válido:', phone);
+        } else {
+            console.log('Número de telefone inválido');
+        }
     });
 });
 
-
-
+function validarTelefone(phone) {
+    // Regex para validar o formato do telefone brasileiro (com código de área)
+    // Exemplos válidos: (11) 99876-5432, (21) 3434-1234
+    const regex = /^\(?([1-9]{2})\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$/;
+    return regex.test(phone);
+}
