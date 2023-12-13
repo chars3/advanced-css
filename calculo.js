@@ -48,11 +48,13 @@ function gerarUTM() {
     var source = document.getElementById('source').value;
     var medium = document.getElementById('medium').value;
     var campaign = document.getElementById('campaign').value;
+    var term = document.getElementById('term').value;
 
     var urlGerada = urlBase;
     urlGerada += (urlBase.includes('?') ? '&' : '?') + 'fiqon_source=' + encodeURIComponent(source);
     urlGerada += '&fiqon_medium=' + encodeURIComponent(medium);
     urlGerada += '&fiqon_campaign=' + encodeURIComponent(campaign);
+    urlGerada += '&fiqon_term=' + encodeURIComponent(term);
 
     document.getElementById('urlGerada').value = urlGerada;
 }
@@ -69,24 +71,16 @@ document.getElementById('copyButton').addEventListener('click', function () {
         });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    let form = document.getElementById('form-phone');
+//===== MáscaraTelefone =====
+const handlePhone = (event) => {
+    let input = event.target
+    input.value = phoneMask(input.value)
+}
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let phone = document.getElementById('phone').value;
-
-        if (validarTelefone(phone)) {
-            console.log('Número de telefone válido:', phone);
-        } else {
-            console.log('Número de telefone inválido');
-        }
-    });
-});
-
-function validarTelefone(phone) {
-    // Regex para validar o formato do telefone brasileiro (com código de área)
-    // Exemplos válidos: (11) 99876-5432, (21) 3434-1234
-    const regex = /^\(?([1-9]{2})\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$/;
-    return regex.test(phone);
+const phoneMask = (value) => {
+    if (!value) return ""
+    value = value.replace(/\D/g, '')
+    value = value.replace(/(\d{2})(\d)/, "($1) $2")
+    value = value.replace(/(\d)(\d{4})$/, "$1-$2")
+    return value
 }

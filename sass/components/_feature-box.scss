@@ -9,6 +9,9 @@
     min-height: 25rem;
     width: 30rem;
     
+    @include respond(tab-land) {
+        width: 200px;
+    }
 
     &__icon {
         width: 30%;

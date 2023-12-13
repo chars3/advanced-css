@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Gerador de utms</title>
 </head>
 
 <body>
@@ -212,6 +212,10 @@
                         <input class="input" type="text" id="campaign" required="required">
                         <span class="span">Campaign (fiqon_campaign):</span>
                     </div>
+                    <div class="form-utm__input-box">
+                        <input class="input" type="text" id="term" required="required">
+                        <span class="span">Campaign (fiqon_term):</span>
+                    </div>
 
                     <button class="btn btn--utm" onclick="gerarUTM()">Gerar URL</button>
 
@@ -233,8 +237,8 @@
                 <form class="form-utm" id="form-phone">
                     <!-- <label for="urlBase">URL Base:</label> -->
                     <div class="form-utm__input-box">
-                        <input class="input input-phone" type="text" id="phone">
-                        <span class="span">Telefone</span>
+                        <input onkeyup="handlePhone(event)" class="input input-phone" type="text" id="phone">
+                        <span class="span span-error">Telefone</span>
                     </div>
 
                     <button id="submit-phone" type="submit" class="btn btn--utm">validar telefone</button>
@@ -242,7 +246,7 @@
             </div>
         </section>
 
-        <section class="section-tours">
+        <!-- <section class="section-tours">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary banner__img">
                     Ebooks Interativos
@@ -332,7 +336,7 @@
 
 
             </div>
-        </section>
+        </section> -->
 
 
         <div class="popup" id="popup-1">
@@ -416,6 +420,7 @@
     </main>
 
     <script src="calculo.js"></script>
+    <script src="phoneValidator.js"></script>
 </body>
 
 </html>
